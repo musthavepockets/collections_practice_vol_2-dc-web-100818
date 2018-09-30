@@ -44,7 +44,11 @@ def merge_data(keys, data)
   
   data[0].values_at(keys).sort
   
+<<<<<<< HEAD
   data[0].values
+=======
+  
+>>>>>>> e1d5aa8596182cb09d10c065393dc65f91318b99
   
 end
 
@@ -56,6 +60,7 @@ end
 
 
 def organize_schools(schools)
+<<<<<<< HEAD
   
   organized_schools = Hash.new { |hash, key| hash[key] = []}
   schools.each do |school, location|
@@ -65,4 +70,21 @@ def organize_schools(schools)
   end
   organized_schools.keys.sort
   organized_schools
+=======
+  organized_schools = Hash.new do |hash, key| hash[key] = []
+    schools.each do |school, location|
+      if location.eql?(location) == true
+        location.each do |k, v|
+      binding.pry
+          organized_schools[v] = Array.new << school
+          
+        end
+      else
+        puts "what happened"
+      end
+    end
+    organized_schools.values_at(keys).sort
+    
+  end
+>>>>>>> e1d5aa8596182cb09d10c065393dc65f91318b99
 end
